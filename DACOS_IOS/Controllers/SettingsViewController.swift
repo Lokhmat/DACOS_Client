@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SettingsViewController.swift
 //  DACOS_IOS
 //
 //  Created by Sergey Lokhmatikov on 02.05.2022.
@@ -7,13 +7,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class SettingsViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        view?.backgroundColor = UIColor.blue
     }
-
-
 }
-
