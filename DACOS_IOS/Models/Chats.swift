@@ -10,15 +10,7 @@ import CoreData
 
 class Chats {
     private var chats: [Chat] = []
-    let context: NSManagedObjectContext = {
-        let container = NSPersistentContainer(name: "DACOS_IOS")
-        container.loadPersistentStores { _, error in
-            if let error = error {
-                fatalError("Container loading failed")
-            }
-        }
-        return container.viewContext
-    }()
+    let context = MainUser.context
     
     public func getChats() -> [Chat]{
         let newChats = try? context.fetch(Chat.fetchRequest())

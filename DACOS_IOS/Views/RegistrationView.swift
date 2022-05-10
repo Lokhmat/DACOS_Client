@@ -12,6 +12,7 @@ class RegistrationView: UIView {
     private let login = UITextField()
     private let password = UITextField()
     private let register = UIButton()
+    private let help = UILabel()
     internal let servers = UIPickerView()
     internal var onPress: () -> () = {}
     
@@ -54,10 +55,28 @@ class RegistrationView: UIView {
         register.setTitle("Go!", for: .normal)
         register.pinCenter(to: self.centerXAnchor)
         register.layer.cornerRadius = 20
-        register.addTarget(self, action: #selector(kek(_:)), for: .touchUpInside)
+        register.addTarget(self, action: #selector(register(_:)), for: .touchUpInside)
+        
+        addSubview(help)
+        help.pinTop(to: password, 50)
+        help.pinCenter(to: self.centerXAnchor)
+        help.setWidth(to: 200)
+        help.setHeight(to: 100)
     }
     
-    @objc func kek(_ sender: AnyObject) {
+    @objc func register(_ sender: AnyObject) {
+        if login.text?.count ?? 0 < 3{
+            help.text = "Login should contain at least 3 simbols"
+            return
+        }
+        if password.text?.count ?? 0 < 8 {
+            help.text = "Password should contain at least 8 simbols"
+            return
+        }
+        if !MainUser.tryRegisterUser(login: login.text!, password: password.text!, server: Servers.getServers()[servers.selectedRow(inComponent: 0)]){
+            help.text = "Something went wrong, try again later"
+            return
+        }
         onPress()
     }
 }

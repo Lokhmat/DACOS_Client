@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE40DEC2982364E32099DF10 /* Pods_DACOS_IOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44798E2BFFE0FCEF0C1E01AF /* Pods_DACOS_IOS.framework */; };
 		F6C6AF00282013C200E26AAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C6AEFF282013C200E26AAA /* AppDelegate.swift */; };
 		F6C6AF02282013C200E26AAA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C6AF01282013C200E26AAA /* SceneDelegate.swift */; };
 		F6C6AF0A282013C200E26AAA /* DACOS_IOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F6C6AF08282013C200E26AAA /* DACOS_IOS.xcdatamodeld */; };
@@ -30,9 +31,13 @@
 		F6DE5796282A680F004584B8 /* MainUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DE5795282A680F004584B8 /* MainUser.swift */; };
 		F6DE5798282A6BEB004584B8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DE5797282A6BEB004584B8 /* RegisterViewController.swift */; };
 		F6DE579A282A6D96004584B8 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DE5799282A6D96004584B8 /* RegistrationView.swift */; };
+		F6DE579C282AADD7004584B8 /* Servers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DE579B282AADD7004584B8 /* Servers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		44798E2BFFE0FCEF0C1E01AF /* Pods_DACOS_IOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DACOS_IOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		57C6F6A132E15D46A7274BC6 /* Pods-DACOS_IOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DACOS_IOS.debug.xcconfig"; path = "Target Support Files/Pods-DACOS_IOS/Pods-DACOS_IOS.debug.xcconfig"; sourceTree = "<group>"; };
+		7495766512C4672B36A6FF92 /* Pods-DACOS_IOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DACOS_IOS.release.xcconfig"; path = "Target Support Files/Pods-DACOS_IOS/Pods-DACOS_IOS.release.xcconfig"; sourceTree = "<group>"; };
 		F6C6AEFC282013C200E26AAA /* DACOS_IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DACOS_IOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6C6AEFF282013C200E26AAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6C6AF01282013C200E26AAA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +62,7 @@
 		F6DE5795282A680F004584B8 /* MainUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUser.swift; sourceTree = "<group>"; };
 		F6DE5797282A6BEB004584B8 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		F6DE5799282A6D96004584B8 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		F6DE579B282AADD7004584B8 /* Servers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Servers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,17 +71,37 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6DE578E28298948004584B8 /* MessageKit in Frameworks */,
+				CE40DEC2982364E32099DF10 /* Pods_DACOS_IOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B5C6434543229EFCB3DA6108 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				57C6F6A132E15D46A7274BC6 /* Pods-DACOS_IOS.debug.xcconfig */,
+				7495766512C4672B36A6FF92 /* Pods-DACOS_IOS.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		EAE1A99C45B75857AA233FA5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44798E2BFFE0FCEF0C1E01AF /* Pods_DACOS_IOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F6C6AEF3282013C200E26AAA = {
 			isa = PBXGroup;
 			children = (
 				F6C6AEFE282013C200E26AAA /* DACOS_IOS */,
 				F6C6AEFD282013C200E26AAA /* Products */,
+				B5C6434543229EFCB3DA6108 /* Pods */,
+				EAE1A99C45B75857AA233FA5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,6 +147,7 @@
 				F6C6AF3028217F2800E26AAA /* Dummies.swift */,
 				F6DE578F282A5737004584B8 /* MessageKitUtils.swift */,
 				F6DE5795282A680F004584B8 /* MainUser.swift */,
+				F6DE579B282AADD7004584B8 /* Servers.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -156,9 +183,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F6C6AF13282013C500E26AAA /* Build configuration list for PBXNativeTarget "DACOS_IOS" */;
 			buildPhases = (
+				7B42FC55710A9F44BBE6ED7A /* [CP] Check Pods Manifest.lock */,
 				F6C6AEF8282013C200E26AAA /* Sources */,
 				F6C6AEF9282013C200E26AAA /* Frameworks */,
 				F6C6AEFA282013C200E26AAA /* Resources */,
+				F018B58818A90A9425A3E62B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -219,6 +248,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7B42FC55710A9F44BBE6ED7A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DACOS_IOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F018B58818A90A9425A3E62B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DACOS_IOS/Pods-DACOS_IOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DACOS_IOS/Pods-DACOS_IOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DACOS_IOS/Pods-DACOS_IOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F6C6AEF8282013C200E26AAA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -228,6 +299,7 @@
 				F6DE5798282A6BEB004584B8 /* RegisterViewController.swift in Sources */,
 				F6DE579A282A6D96004584B8 /* RegistrationView.swift in Sources */,
 				F6C6AF2B28206A9400E26AAA /* ChatsView.swift in Sources */,
+				F6DE579C282AADD7004584B8 /* Servers.swift in Sources */,
 				F6C6AF2D2821556900E26AAA /* ChatPreview.swift in Sources */,
 				F6C6AF2528202CB800E26AAA /* ProfileViewController.swift in Sources */,
 				F6C6AF2F28217EE800E26AAA /* Chats.swift in Sources */,
@@ -369,6 +441,7 @@
 		};
 		F6C6AF14282013C500E26AAA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57C6F6A132E15D46A7274BC6 /* Pods-DACOS_IOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -399,6 +472,7 @@
 		};
 		F6C6AF15282013C500E26AAA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7495766512C4672B36A6FF92 /* Pods-DACOS_IOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

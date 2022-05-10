@@ -9,15 +9,7 @@ import Foundation
 import CoreData
 
 class Dummies {
-    let context: NSManagedObjectContext = {
-        let container = NSPersistentContainer(name: "DACOS_IOS")
-        container.loadPersistentStores { _, error in
-            if let error = error {
-                fatalError("Container loading failed")
-            }
-        }
-        return container.viewContext
-    }()
+    let context = MainUser.context
     
     public func populateWithDummies(){
         let chats = try? context.fetch(Chat.fetchRequest())

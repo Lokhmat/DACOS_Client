@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import SwiftyRSA
 
 class MainUser {
     static let context: NSManagedObjectContext = {
@@ -28,11 +29,39 @@ class MainUser {
         }
     }
     
-    static func tryRegisterUser() -> Bool {
+    static func tryRegisterUser(login: String, password: String, server: Server) -> Bool {
         if isRegistered() {
             return true
         }
         
-        return true
+        do {
+            let keyPair = try SwiftyRSA.generateRSAKeyPair(sizeInBits: 2048)
+            let privateKey = keyPair.privateKey
+            
+            let query = [kSecClass: kSecClassGenericPassword,
+                        kSecAttrAccount: kSecAttrAccount,
+                        kSecAttrAccessible: kSecAttrAccessibleWhenUnlocked,
+                        kSecUseDataProtectionKeychain: true,
+                     kSecValueData: try privateKey.data()] as [String: Any]
+            
+            let code = SecItemAdd(query as CFDictionary, nil)
+            if code != errSecSuccess{
+                print(SecCopyErrorMessageString(code, nil) ?? "Alright")
+            }
+        }
+        catch let error{
+            print(error.localizedDescription)
+        }
+        
+        let newSuperUser = SuperUser(context: context)
+        newSuperUser.login = login
+        newSuperUser.server = server
+        do {
+            try context.save()
+            return true
+        } catch {
+            print(error)
+            return false
+        }
     }
 }

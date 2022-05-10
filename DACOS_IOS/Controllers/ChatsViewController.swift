@@ -7,11 +7,11 @@
 
 import UIKit
 
-class ChatsViewController : UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ChatsViewController : UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchControllerDelegate, UISearchBarDelegate {
     
     private let chatsData: Chats = Chats()
     private let chats = ChatsView()
-    private let nav = UINavigationController()
+    let searchBar = UISearchBar()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +27,18 @@ class ChatsViewController : UIViewController, UITableViewDelegate, UITableViewDa
         chats.table.isScrollEnabled = true
         chats.table.delaysContentTouches = true
         chats.table.canCancelContentTouches = true
+        searchBar.backgroundColor = .black
+        searchBar.sizeToFit()
+        navigationItem.titleView = searchBar
+        searchBar.delegate = self
+        
+        navigationController?.navigationBar.barTintColor = UIColor(red: 55/255, green: 120/255,
+                                                 blue: 250/255, alpha: 1)
+        navigationController?.navigationBar.barStyle = .black
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.isTranslucent = false
+        navigationItem.title = "Search Bar"
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,7 +50,7 @@ class ChatsViewController : UIViewController, UITableViewDelegate, UITableViewDa
             return UITableViewCell()
         }
         let chat = chatsData.getChat(id: indexPath.row)
-        let lastMsg = chat.messages?.allObjects.sorted(by: {($0 as! Message).when! > ($1 as! Message).when!}).last as! Message
+        let lastMsg = chat.messages?.allObjects.sorted(by: {($0 as! Message).when! > ($1 as! Message).when!}).first as! Message
         cell.initView(login: (chat.with?.login)!, msg: lastMsg.payload!, date: lastMsg.when!)
         return cell
     }

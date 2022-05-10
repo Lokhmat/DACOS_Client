@@ -21,6 +21,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let dummiesManager = Dummies()
         dummiesManager.populateWithDummies()
         // TODO: REMOVE IN PROD
+        
+        Servers.updateServers()
         if MainUser.isRegistered() {
             guard let windowScene = (scene as? UIWindowScene) else { return }
             self.window = UIWindow(windowScene: windowScene)
