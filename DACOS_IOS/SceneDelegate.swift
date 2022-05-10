@@ -21,9 +21,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let dummiesManager = Dummies()
         dummiesManager.populateWithDummies()
         // TODO: REMOVE IN PROD
-        
-        guard let windowScene = (scene as? UIWindowScene) else { return }
-        self.window = UIWindow(windowScene: windowScene)
+        if MainUser.isRegistered() {
+            guard let windowScene = (scene as? UIWindowScene) else { return }
+            self.window = UIWindow(windowScene: windowScene)
+            let nav1 = UINavigationController()
+            let mainView = NavigationMenuBaseController()
+            nav1.viewControllers = [mainView]
+            self.window!.rootViewController = nav1
+            self.window?.makeKeyAndVisible()
+        } else {
+            guard let windowScene = (scene as? UIWindowScene) else { return }
+            self.window = UIWindow(windowScene: windowScene)
+            let controller = RegisterViewController()
+            controller.changeScreen = moveToMainScreen
+            self.window!.rootViewController = controller
+            self.window!.makeKeyAndVisible()
+        }
+    }
+    
+    func moveToMainScreen() {
         let nav1 = UINavigationController()
         let mainView = NavigationMenuBaseController()
         nav1.viewControllers = [mainView]

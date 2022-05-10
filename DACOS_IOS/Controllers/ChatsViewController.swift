@@ -46,6 +46,7 @@ class ChatsViewController : UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ : UITableView, didSelectRowAt indexPath: IndexPath) {
         let chat = ChatViewController()
         chat.setupChat(chat: chatsData.getChat(id: indexPath.row))
+        chats.table.deselectRow(at: indexPath, animated: true)
         navigationController?.pushViewController(chat, animated: true)
     }
 }

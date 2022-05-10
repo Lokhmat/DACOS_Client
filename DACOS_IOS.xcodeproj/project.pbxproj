@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		F6C6AF00282013C200E26AAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C6AEFF282013C200E26AAA /* AppDelegate.swift */; };
 		F6C6AF02282013C200E26AAA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C6AF01282013C200E26AAA /* SceneDelegate.swift */; };
-		F6C6AF07282013C200E26AAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6C6AF05282013C200E26AAA /* Main.storyboard */; };
 		F6C6AF0A282013C200E26AAA /* DACOS_IOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F6C6AF08282013C200E26AAA /* DACOS_IOS.xcdatamodeld */; };
 		F6C6AF0C282013C500E26AAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6C6AF0B282013C500E26AAA /* Assets.xcassets */; };
 		F6C6AF1828201AD400E26AAA /* UIViewPIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C6AF1728201AD400E26AAA /* UIViewPIn.swift */; };
@@ -24,13 +23,19 @@
 		F6C6AF2F28217EE800E26AAA /* Chats.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C6AF2E28217EE800E26AAA /* Chats.swift */; };
 		F6C6AF3128217F2800E26AAA /* Dummies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C6AF3028217F2800E26AAA /* Dummies.swift */; };
 		F6C6AF332829673E00E26AAA /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C6AF322829673E00E26AAA /* ChatViewController.swift */; };
+		F6DE578E28298948004584B8 /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = F6DE578D28298948004584B8 /* MessageKit */; };
+		F6DE5790282A5737004584B8 /* MessageKitUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DE578F282A5737004584B8 /* MessageKitUtils.swift */; };
+		F6DE5792282A5A03004584B8 /* ChatExtesions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DE5791282A5A03004584B8 /* ChatExtesions.swift */; };
+		F6DE5794282A5C9F004584B8 /* SuperUserExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DE5793282A5C9F004584B8 /* SuperUserExtension.swift */; };
+		F6DE5796282A680F004584B8 /* MainUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DE5795282A680F004584B8 /* MainUser.swift */; };
+		F6DE5798282A6BEB004584B8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DE5797282A6BEB004584B8 /* RegisterViewController.swift */; };
+		F6DE579A282A6D96004584B8 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DE5799282A6D96004584B8 /* RegistrationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F6C6AEFC282013C200E26AAA /* DACOS_IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DACOS_IOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6C6AEFF282013C200E26AAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6C6AF01282013C200E26AAA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F6C6AF06282013C200E26AAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F6C6AF09282013C200E26AAA /* DACOS_IOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DACOS_IOS.xcdatamodel; sourceTree = "<group>"; };
 		F6C6AF0B282013C500E26AAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F6C6AF10282013C500E26AAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -46,6 +51,12 @@
 		F6C6AF2E28217EE800E26AAA /* Chats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chats.swift; sourceTree = "<group>"; };
 		F6C6AF3028217F2800E26AAA /* Dummies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dummies.swift; sourceTree = "<group>"; };
 		F6C6AF322829673E00E26AAA /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		F6DE578F282A5737004584B8 /* MessageKitUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageKitUtils.swift; sourceTree = "<group>"; };
+		F6DE5791282A5A03004584B8 /* ChatExtesions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatExtesions.swift; sourceTree = "<group>"; };
+		F6DE5793282A5C9F004584B8 /* SuperUserExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperUserExtension.swift; sourceTree = "<group>"; };
+		F6DE5795282A680F004584B8 /* MainUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUser.swift; sourceTree = "<group>"; };
+		F6DE5797282A6BEB004584B8 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		F6DE5799282A6D96004584B8 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6DE578E28298948004584B8 /* MessageKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,7 +96,6 @@
 				F6C6AF162820193F00E26AAA /* Utils */,
 				F6C6AEFF282013C200E26AAA /* AppDelegate.swift */,
 				F6C6AF01282013C200E26AAA /* SceneDelegate.swift */,
-				F6C6AF05282013C200E26AAA /* Main.storyboard */,
 				F6C6AF0B282013C500E26AAA /* Assets.xcassets */,
 				F6C6AF10282013C500E26AAA /* Info.plist */,
 				F6C6AF08282013C200E26AAA /* DACOS_IOS.xcdatamodeld */,
@@ -95,7 +106,9 @@
 		F6C6AF162820193F00E26AAA /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				F6DE5793282A5C9F004584B8 /* SuperUserExtension.swift */,
 				F6C6AF1728201AD400E26AAA /* UIViewPIn.swift */,
+				F6DE5791282A5A03004584B8 /* ChatExtesions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -106,6 +119,8 @@
 				F6C6AF1E28202B6A00E26AAA /* TabItem.swift */,
 				F6C6AF2E28217EE800E26AAA /* Chats.swift */,
 				F6C6AF3028217F2800E26AAA /* Dummies.swift */,
+				F6DE578F282A5737004584B8 /* MessageKitUtils.swift */,
+				F6DE5795282A680F004584B8 /* MainUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -116,6 +131,7 @@
 				F6C6AF2028202C3A00E26AAA /* CustomTabBar.swift */,
 				F6C6AF2A28206A9400E26AAA /* ChatsView.swift */,
 				F6C6AF2C2821556900E26AAA /* ChatPreview.swift */,
+				F6DE5799282A6D96004584B8 /* RegistrationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -128,6 +144,7 @@
 				F6C6AF2428202CB800E26AAA /* ProfileViewController.swift */,
 				F6C6AF262820604F00E26AAA /* SettingsViewController.swift */,
 				F6C6AF322829673E00E26AAA /* ChatViewController.swift */,
+				F6DE5797282A6BEB004584B8 /* RegisterViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -148,6 +165,9 @@
 			dependencies = (
 			);
 			name = DACOS_IOS;
+			packageProductDependencies = (
+				F6DE578D28298948004584B8 /* MessageKit */,
+			);
 			productName = DACOS_IOS;
 			productReference = F6C6AEFC282013C200E26AAA /* DACOS_IOS.app */;
 			productType = "com.apple.product-type.application";
@@ -176,6 +196,9 @@
 				Base,
 			);
 			mainGroup = F6C6AEF3282013C200E26AAA;
+			packageReferences = (
+				F6DE578C28298948004584B8 /* XCRemoteSwiftPackageReference "MessageKit" */,
+			);
 			productRefGroup = F6C6AEFD282013C200E26AAA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -191,7 +214,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6C6AF0C282013C500E26AAA /* Assets.xcassets in Resources */,
-				F6C6AF07282013C200E26AAA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,35 +225,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6C6AF1828201AD400E26AAA /* UIViewPIn.swift in Sources */,
+				F6DE5798282A6BEB004584B8 /* RegisterViewController.swift in Sources */,
+				F6DE579A282A6D96004584B8 /* RegistrationView.swift in Sources */,
 				F6C6AF2B28206A9400E26AAA /* ChatsView.swift in Sources */,
 				F6C6AF2D2821556900E26AAA /* ChatPreview.swift in Sources */,
 				F6C6AF2528202CB800E26AAA /* ProfileViewController.swift in Sources */,
 				F6C6AF2F28217EE800E26AAA /* Chats.swift in Sources */,
+				F6DE5790282A5737004584B8 /* MessageKitUtils.swift in Sources */,
 				F6C6AF1D28202B3B00E26AAA /* NavigationMenuController.swift in Sources */,
 				F6C6AF272820604F00E26AAA /* SettingsViewController.swift in Sources */,
+				F6DE5792282A5A03004584B8 /* ChatExtesions.swift in Sources */,
 				F6C6AF1F28202B6A00E26AAA /* TabItem.swift in Sources */,
 				F6C6AF00282013C200E26AAA /* AppDelegate.swift in Sources */,
 				F6C6AF0A282013C200E26AAA /* DACOS_IOS.xcdatamodeld in Sources */,
+				F6DE5794282A5C9F004584B8 /* SuperUserExtension.swift in Sources */,
 				F6C6AF2128202C3A00E26AAA /* CustomTabBar.swift in Sources */,
 				F6C6AF2328202C5400E26AAA /* ChatsViewController.swift in Sources */,
 				F6C6AF3128217F2800E26AAA /* Dummies.swift in Sources */,
+				F6DE5796282A680F004584B8 /* MainUser.swift in Sources */,
 				F6C6AF332829673E00E26AAA /* ChatViewController.swift in Sources */,
 				F6C6AF02282013C200E26AAA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		F6C6AF05282013C200E26AAA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F6C6AF06282013C200E26AAA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		F6C6AF11282013C500E26AAA /* Debug */ = {
@@ -285,7 +302,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -340,7 +357,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -362,10 +379,10 @@
 				INFOPLIST_FILE = DACOS_IOS/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -376,6 +393,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 			};
 			name = Debug;
 		};
@@ -391,10 +409,10 @@
 				INFOPLIST_FILE = DACOS_IOS/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -405,6 +423,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 			};
 			name = Release;
 		};
@@ -430,6 +449,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F6DE578C28298948004584B8 /* XCRemoteSwiftPackageReference "MessageKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MessageKit/MessageKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F6DE578D28298948004584B8 /* MessageKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F6DE578C28298948004584B8 /* XCRemoteSwiftPackageReference "MessageKit" */;
+			productName = MessageKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		F6C6AF08282013C200E26AAA /* DACOS_IOS.xcdatamodeld */ = {
