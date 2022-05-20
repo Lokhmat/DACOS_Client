@@ -12,7 +12,7 @@ class RegistrationView: UIView {
     private let login = UITextField()
     private let password = UITextField()
     private let register = UIButton()
-    private let help = UILabel()
+    let help = UILabel()
     internal let servers = UIPickerView()
     internal var onPress: () -> () = {}
     
@@ -58,7 +58,7 @@ class RegistrationView: UIView {
         register.addTarget(self, action: #selector(register(_:)), for: .touchUpInside)
         
         addSubview(help)
-        help.pinTop(to: password, 50)
+        help.pinTop(to: register.bottomAnchor, 50)
         help.pinCenter(to: self.centerXAnchor)
         help.setWidth(to: 200)
         help.setHeight(to: 100)
@@ -77,6 +77,19 @@ class RegistrationView: UIView {
             help.text = "Something went wrong, try again later"
             return
         }
-        onPress()
+        if MainUser.getPublicKey() == nil{
+            help.text = "Something went wrong, try again later"
+            return
+        }
+        Servers.registerOnServer(login: login.text!, pk: MainUser.getPublicKey()!, server: Servers.getServers()[servers.selectedRow(inComponent: 0)].ip!, errorCallback: printError)
+        if (help.text != "Error when registering"){
+            onPress()
+        }
+        
     }
+    
+    private func printError(msg: String){
+        help.text = msg
+    }
+    
 }

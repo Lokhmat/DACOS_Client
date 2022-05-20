@@ -24,11 +24,20 @@ enum TabItem: String, CaseIterable {
     var icon: UIImage {
         switch self {
         case .chats:
-            return UIImage(named: "chats")!
+            if StyleExt.isDark(){
+                return UIImage(named: "chats_dark")!
+            }
+            return UIImage(named: "chats_light")!
         case .profile:
-            return UIImage(named: "profile")!
+            if StyleExt.isDark(){
+                return UIImage(named: "profile_dark")!
+            }
+            return UIImage(named: "profile_light")!
         case .settings:
-            return UIImage(named: "settings")!
+            if StyleExt.isDark(){
+                return UIImage(named: "settings_dark")!
+            }
+            return UIImage(named: "settings_light")!
         }
     }
     var displayTitle: String {

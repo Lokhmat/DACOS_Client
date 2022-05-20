@@ -34,15 +34,12 @@ class Dummies {
         msgThree.when = formatter.date(from: "2022.02.08 21:33")
         
         let serverOne = Server(context: context)
-        serverOne.id = "1"
         serverOne.ip = "192.168.0.1"
         
         let serverTwo = Server(context: context)
-        serverTwo.id = "2"
         serverTwo.ip = "192.168.0.2"
         
         let serverThree = Server(context: context)
-        serverThree.id = "3"
         serverThree.ip = "192.168.0.3"
         
         let denis = User(context: context)
@@ -75,7 +72,11 @@ class Dummies {
         newChatTwo.addToMessages(msgThree)
         
         do {
-            try context.save()
+            DispatchQueue.main.async { [self] in
+                do {
+                    try self.context.save()
+                } catch{}
+            }
         } catch {
             print(error)
             fatalError("Error saving dummies")

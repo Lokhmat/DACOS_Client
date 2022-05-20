@@ -12,6 +12,7 @@ class ChatsView : UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        table.backgroundColor = StyleExt.mainColor()
         setupView()
     }
     

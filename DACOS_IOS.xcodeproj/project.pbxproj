@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		CE40DEC2982364E32099DF10 /* Pods_DACOS_IOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44798E2BFFE0FCEF0C1E01AF /* Pods_DACOS_IOS.framework */; };
+		F67A10372838FE8800D8B84C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67A10362838FE8800D8B84C /* ProfileView.swift */; };
+		F67A10392839056700D8B84C /* Bubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67A10382839056700D8B84C /* Bubble.swift */; };
+		F67A103B283908B300D8B84C /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67A103A283908B300D8B84C /* UserSettings.swift */; };
+		F67A103D28390A8E00D8B84C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67A103C28390A8D00D8B84C /* SettingsView.swift */; };
+		F67A103F283918C400D8B84C /* StyleExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67A103E283918C400D8B84C /* StyleExt.swift */; };
+		F67A104128393F9E00D8B84C /* APIServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67A104028393F9D00D8B84C /* APIServer.swift */; };
 		F6C6AF00282013C200E26AAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C6AEFF282013C200E26AAA /* AppDelegate.swift */; };
 		F6C6AF02282013C200E26AAA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C6AF01282013C200E26AAA /* SceneDelegate.swift */; };
 		F6C6AF0A282013C200E26AAA /* DACOS_IOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F6C6AF08282013C200E26AAA /* DACOS_IOS.xcdatamodeld */; };
@@ -32,12 +38,22 @@
 		F6DE5798282A6BEB004584B8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DE5797282A6BEB004584B8 /* RegisterViewController.swift */; };
 		F6DE579A282A6D96004584B8 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DE5799282A6D96004584B8 /* RegistrationView.swift */; };
 		F6DE579C282AADD7004584B8 /* Servers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DE579B282AADD7004584B8 /* Servers.swift */; };
+		F6F0623728395805006A7573 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F0623628395805006A7573 /* Users.swift */; };
+		F6F06239283958B4006A7573 /* APIUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F06238283958B4006A7573 /* APIUser.swift */; };
+		F6F0623B28397897006A7573 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F0623A28397897006A7573 /* Messages.swift */; };
+		F6F0623E283979A1006A7573 /* APIMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F0623D283979A1006A7573 /* APIMessage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		44798E2BFFE0FCEF0C1E01AF /* Pods_DACOS_IOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DACOS_IOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57C6F6A132E15D46A7274BC6 /* Pods-DACOS_IOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DACOS_IOS.debug.xcconfig"; path = "Target Support Files/Pods-DACOS_IOS/Pods-DACOS_IOS.debug.xcconfig"; sourceTree = "<group>"; };
 		7495766512C4672B36A6FF92 /* Pods-DACOS_IOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DACOS_IOS.release.xcconfig"; path = "Target Support Files/Pods-DACOS_IOS/Pods-DACOS_IOS.release.xcconfig"; sourceTree = "<group>"; };
+		F67A10362838FE8800D8B84C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		F67A10382839056700D8B84C /* Bubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bubble.swift; sourceTree = "<group>"; };
+		F67A103A283908B300D8B84C /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		F67A103C28390A8D00D8B84C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		F67A103E283918C400D8B84C /* StyleExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleExt.swift; sourceTree = "<group>"; };
+		F67A104028393F9D00D8B84C /* APIServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServer.swift; sourceTree = "<group>"; };
 		F6C6AEFC282013C200E26AAA /* DACOS_IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DACOS_IOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6C6AEFF282013C200E26AAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6C6AF01282013C200E26AAA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +79,10 @@
 		F6DE5797282A6BEB004584B8 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		F6DE5799282A6D96004584B8 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		F6DE579B282AADD7004584B8 /* Servers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Servers.swift; sourceTree = "<group>"; };
+		F6F0623628395805006A7573 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		F6F06238283958B4006A7573 /* APIUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUser.swift; sourceTree = "<group>"; };
+		F6F0623A28397897006A7573 /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
+		F6F0623D283979A1006A7573 /* APIMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMessage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +155,7 @@
 				F6DE5793282A5C9F004584B8 /* SuperUserExtension.swift */,
 				F6C6AF1728201AD400E26AAA /* UIViewPIn.swift */,
 				F6DE5791282A5A03004584B8 /* ChatExtesions.swift */,
+				F67A103E283918C400D8B84C /* StyleExt.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -142,12 +163,16 @@
 		F6C6AF1928202AA300E26AAA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F6F0623C28397989006A7573 /* APIModels */,
 				F6C6AF1E28202B6A00E26AAA /* TabItem.swift */,
 				F6C6AF2E28217EE800E26AAA /* Chats.swift */,
 				F6C6AF3028217F2800E26AAA /* Dummies.swift */,
 				F6DE578F282A5737004584B8 /* MessageKitUtils.swift */,
 				F6DE5795282A680F004584B8 /* MainUser.swift */,
 				F6DE579B282AADD7004584B8 /* Servers.swift */,
+				F67A103A283908B300D8B84C /* UserSettings.swift */,
+				F6F0623628395805006A7573 /* Users.swift */,
+				F6F0623A28397897006A7573 /* Messages.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -159,6 +184,9 @@
 				F6C6AF2A28206A9400E26AAA /* ChatsView.swift */,
 				F6C6AF2C2821556900E26AAA /* ChatPreview.swift */,
 				F6DE5799282A6D96004584B8 /* RegistrationView.swift */,
+				F67A10362838FE8800D8B84C /* ProfileView.swift */,
+				F67A10382839056700D8B84C /* Bubble.swift */,
+				F67A103C28390A8D00D8B84C /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -174,6 +202,16 @@
 				F6DE5797282A6BEB004584B8 /* RegisterViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F6F0623C28397989006A7573 /* APIModels */ = {
+			isa = PBXGroup;
+			children = (
+				F67A104028393F9D00D8B84C /* APIServer.swift */,
+				F6F06238283958B4006A7573 /* APIUser.swift */,
+				F6F0623D283979A1006A7573 /* APIMessage.swift */,
+			);
+			path = APIModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,13 +334,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6C6AF1828201AD400E26AAA /* UIViewPIn.swift in Sources */,
+				F6F0623B28397897006A7573 /* Messages.swift in Sources */,
 				F6DE5798282A6BEB004584B8 /* RegisterViewController.swift in Sources */,
 				F6DE579A282A6D96004584B8 /* RegistrationView.swift in Sources */,
 				F6C6AF2B28206A9400E26AAA /* ChatsView.swift in Sources */,
 				F6DE579C282AADD7004584B8 /* Servers.swift in Sources */,
 				F6C6AF2D2821556900E26AAA /* ChatPreview.swift in Sources */,
+				F67A103F283918C400D8B84C /* StyleExt.swift in Sources */,
 				F6C6AF2528202CB800E26AAA /* ProfileViewController.swift in Sources */,
 				F6C6AF2F28217EE800E26AAA /* Chats.swift in Sources */,
+				F6F0623E283979A1006A7573 /* APIMessage.swift in Sources */,
 				F6DE5790282A5737004584B8 /* MessageKitUtils.swift in Sources */,
 				F6C6AF1D28202B3B00E26AAA /* NavigationMenuController.swift in Sources */,
 				F6C6AF272820604F00E26AAA /* SettingsViewController.swift in Sources */,
@@ -312,11 +353,18 @@
 				F6C6AF0A282013C200E26AAA /* DACOS_IOS.xcdatamodeld in Sources */,
 				F6DE5794282A5C9F004584B8 /* SuperUserExtension.swift in Sources */,
 				F6C6AF2128202C3A00E26AAA /* CustomTabBar.swift in Sources */,
+				F67A10372838FE8800D8B84C /* ProfileView.swift in Sources */,
+				F6F06239283958B4006A7573 /* APIUser.swift in Sources */,
 				F6C6AF2328202C5400E26AAA /* ChatsViewController.swift in Sources */,
+				F6F0623728395805006A7573 /* Users.swift in Sources */,
+				F67A10392839056700D8B84C /* Bubble.swift in Sources */,
 				F6C6AF3128217F2800E26AAA /* Dummies.swift in Sources */,
 				F6DE5796282A680F004584B8 /* MainUser.swift in Sources */,
 				F6C6AF332829673E00E26AAA /* ChatViewController.swift in Sources */,
+				F67A103B283908B300D8B84C /* UserSettings.swift in Sources */,
 				F6C6AF02282013C200E26AAA /* SceneDelegate.swift in Sources */,
+				F67A103D28390A8E00D8B84C /* SettingsView.swift in Sources */,
+				F67A104128393F9E00D8B84C /* APIServer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,7 +21,7 @@ class CustomTabBar: UIView {
     
     convenience init(menuItems: [TabItem], frame: CGRect) {
         self.init(frame: frame)
-        self.layer.backgroundColor = UIColor.white.cgColor
+        self.layer.backgroundColor = StyleExt.supColor().cgColor
         for i in 0 ..< menuItems.count {
             let itemWidth = self.frame.width / CGFloat(menuItems.count)
             let leadingAnchor = itemWidth * CGFloat(i)
@@ -48,7 +48,7 @@ class CustomTabBar: UIView {
     
     func createTabItem(item: TabItem, itemWidth: CGFloat) -> UIView {
         let tabBarItem = UIView(frame: CGRect.zero)
-        tabBarItem.backgroundColor = #colorLiteral(red: 0.9528383613, green: 0.9529978633, blue: 0.9528173804, alpha: 0.6790227566)
+        tabBarItem.backgroundColor = StyleExt.supColor()
         let itemTitleLabel = UILabel(frame: CGRect.zero)
         let itemIconView = UIImageView(frame: CGRect.zero)
         itemTitleLabel.text = item.displayTitle
@@ -63,6 +63,7 @@ class CustomTabBar: UIView {
         itemTitleLabel.pinTop(to: itemIconView.bottomAnchor, 2)
         itemTitleLabel.setWidth(to: itemWidth)
         itemTitleLabel.font = UIFont.systemFont(ofSize: 12.0)
+        itemTitleLabel.textColor = StyleExt.fontMainColor()
         tabBarItem.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.handleTap)))
         return tabBarItem
     }

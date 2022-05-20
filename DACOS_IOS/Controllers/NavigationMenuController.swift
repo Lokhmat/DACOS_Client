@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import CoreData
 
-class NavigationMenuBaseController: UITabBarController {
+class NavigationMenuBaseController: UITabBarController, UISearchBarDelegate {
     var customTabBar: CustomTabBar!
     var tabBarHeight: CGFloat = 70
     let tabItems: [TabItem] = [.chats, .profile, .settings]
@@ -16,14 +17,27 @@ class NavigationMenuBaseController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupTabBar()
-        self.navigationItem.title = "Чаты"
-        searchBar.placeholder = "Your placeholder"
+        self.navigationItem.title = "Chats"
+        searchBar.placeholder = "Insert login"
+        searchBar.delegate = self
         searchBar.sizeToFit()
-        var leftNavBarButton = UIBarButtonItem(customView:searchBar)
+        let leftNavBarButton = UIBarButtonItem(customView:searchBar)
         self.navigationItem.leftBarButtonItem = leftNavBarButton
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        customTabBar.backgroundColor = StyleExt.mainColor()
+        searchBar.searchTextField.textColor = StyleExt.fontMainColor()
+        navigationController?.navigationBar.barTintColor = StyleExt.mainColor()
+        self.setupCustomTabMenu(tabItems) { (controllers) in
+            self.viewControllers = controllers
+        }
+    }
+    
     func setupTabBar() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.changedTheme(notification:)), name: UserDefaults.didChangeNotification, object: nil)
+        // TODO: This causes warning; don't know maby bugs too.
         self.setupCustomTabMenu(tabItems) { (controllers) in
             self.viewControllers = controllers
         }
@@ -53,5 +67,32 @@ class NavigationMenuBaseController: UITabBarController {
     
     func changeTab(tab: Int) {
         self.selectedIndex = tab
+    }
+    
+    @objc func changedTheme(notification: Notification) {
+        viewWillAppear(true)
+        customTabBar.switchTab(from: 2, to: 0)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let chatsManager = Chats()
+        if let chat = chatsManager.getChats().first(where: {$0.with?.login == searchBar.text}) {
+            let chatUI = ChatViewController()
+            chatUI.setupChat(chat: chat)
+            navigationController?.pushViewController(chatUI, animated: true)
+        } else if let user = Users.getUsers().first(where: {$0.login == searchBar.text}) {
+            let newChat = Chat(context: MainUser.context)
+            newChat.with = user
+            do {
+                DispatchQueue.main.async {
+                    do {
+                        try MainUser.context.save()
+                    } catch{}
+                }
+            } catch {}
+            let chatUI = ChatViewController()
+            chatUI.setupChat(chat: newChat)
+            navigationController?.pushViewController(chatUI, animated: true)
+        }
     }
 }

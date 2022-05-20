@@ -13,7 +13,7 @@ class ChatPreview : UITableViewCell {
     private let login = UILabel()
     private let lastMsg = UILabel()
     
-    public func initView(login: String, msg: String, date: Date){
+    public func initView(login: String, msg: String, date: Date?){
         //setHeight(to: 90)
         self.addSubview(picture)
         self.addSubview(self.login)
@@ -22,8 +22,18 @@ class ChatPreview : UITableViewCell {
         self.login.text = login
         let calendar = Calendar.current
         lastMsg.text = msg
-        timeLabel.text = "\(calendar.component(.hour, from: date)):\(calendar.component(.minute, from: date))"
-        backgroundColor = #colorLiteral(red: 0.9458501935, green: 0.9460085034, blue: 0.9458294511, alpha: 1)
+        if date != nil{
+            var min = ""
+            if calendar.component(.minute, from: date!) < 10 {
+                min = "0\(calendar.component(.minute, from: date!))"
+            } else {
+                min = "\(calendar.component(.minute, from: date!))"
+            }
+            timeLabel.text = "\(calendar.component(.hour, from: date!)):\(min)"
+        } else {
+            timeLabel.text = ""
+        }
+        backgroundColor = StyleExt.supColor()
         picture.pinLeft(to: self, 10)
         picture.pinTop(to: self, 10)
         picture.setHeight(to: 70)
@@ -35,6 +45,7 @@ class ChatPreview : UITableViewCell {
         self.login.pinTop(to: self, 10)
         self.login.pinLeft(to: picture.trailingAnchor, 10)
         self.login.font = UIFont.systemFont(ofSize: 20.0)
+        self.login.textColor = StyleExt.fontMainColor()
         
         lastMsg.pinTop(to: self.login.bottomAnchor, 5)
         lastMsg.pinLeft(to: picture.trailingAnchor, 10)

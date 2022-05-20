@@ -8,11 +8,10 @@
 import UIKit
 import SwiftUI
 
-class ChatsViewController : UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchControllerDelegate, UISearchBarDelegate {
+class ChatsViewController : UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     private let chatsData: Chats = Chats()
     private let chats = ChatsView()
-    lazy var searchBar = UISearchBar(frame: CGRect.zero)
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -21,6 +20,7 @@ class ChatsViewController : UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(rebuild), name: NSNotification.Name.NSManagedObjectContextDidSave, object: MainUser.context)
         view.addSubview(chats)
         chats.pinTop(to: view)
         chats.pinLeft(to: view)
@@ -36,15 +36,6 @@ class ChatsViewController : UIViewController, UITableViewDelegate, UITableViewDa
         chats.table.rowHeight = 90
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        searchBar.placeholder = "searchbartext"
-        searchBar.delegate = self
-        searchBar.sizeToFit()
-        let barItem = UIBarButtonItem(customView: searchBar)
-        
-        self.navigationItem.title = "dsfasd"
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return chatsData.getChats().count
     }
@@ -54,8 +45,8 @@ class ChatsViewController : UIViewController, UITableViewDelegate, UITableViewDa
             return UITableViewCell()
         }
         let chat = chatsData.getChat(id: indexPath.row)
-        let lastMsg = chat.messages?.allObjects.sorted(by: {($0 as! Message).when! > ($1 as! Message).when!}).first as! Message
-        cell.initView(login: (chat.with?.login)!, msg: lastMsg.payload!, date: lastMsg.when!)
+        let lastMsg = chat.messages?.allObjects.sorted(by: {($0 as! Message).when! > ($1 as! Message).when!}).first as! Message?
+        cell.initView(login: (chat.with?.login)!, msg: lastMsg?.payload ?? "", date: lastMsg?.when)
         return cell
     }
     
@@ -64,5 +55,19 @@ class ChatsViewController : UIViewController, UITableViewDelegate, UITableViewDa
         chat.setupChat(chat: chatsData.getChat(id: indexPath.row))
         chats.table.deselectRow(at: indexPath, animated: true)
         navigationController?.pushViewController(chat, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            self.chatsData.delete(indexPath.row)
+            chats.table.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
+    @objc
+    func rebuild() {
+        DispatchQueue.main.async {
+            self.chats.table.reloadData()
+        }
     }
 }

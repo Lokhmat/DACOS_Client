@@ -9,10 +9,10 @@ import Foundation
 import CoreData
 
 class Chats {
-    private var chats: [Chat] = []
+    var chats: [Chat] = []
     let context = MainUser.context
     
-    public func getChats() -> [Chat]{
+    public func getChats() -> [Chat] {
         let newChats = try? context.fetch(Chat.fetchRequest())
         if (newChats != nil && newChats?.count != 0) {
             self.chats = newChats!
@@ -20,6 +20,13 @@ class Chats {
             saveChanges()
         }
         return chats
+    }
+    
+    public func delete(_ id: Int) {
+        if let chats = try? context.fetch(Chat.fetchRequest()) {
+            context.delete(chats[id])
+            saveChanges()
+        }
     }
     
     public func getChat(id: Int) -> Chat{
