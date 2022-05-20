@@ -11,10 +11,16 @@ class NavigationMenuBaseController: UITabBarController {
     var customTabBar: CustomTabBar!
     var tabBarHeight: CGFloat = 70
     let tabItems: [TabItem] = [.chats, .profile, .settings]
+    var searchBar:UISearchBar = UISearchBar()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupTabBar()
+        self.navigationItem.title = "Чаты"
+        searchBar.placeholder = "Your placeholder"
+        searchBar.sizeToFit()
+        var leftNavBarButton = UIBarButtonItem(customView:searchBar)
+        self.navigationItem.leftBarButtonItem = leftNavBarButton
     }
     
     func setupTabBar() {

@@ -14,7 +14,7 @@ class ChatPreview : UITableViewCell {
     private let lastMsg = UILabel()
     
     public func initView(login: String, msg: String, date: Date){
-        setHeight(to: 90)
+        //setHeight(to: 90)
         self.addSubview(picture)
         self.addSubview(self.login)
         self.addSubview(lastMsg)

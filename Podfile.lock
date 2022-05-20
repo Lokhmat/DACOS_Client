@@ -1,0 +1,18 @@
+PODS:
+  - SwiftyRSA (1.7.0):
+    - SwiftyRSA/ObjC (= 1.7.0)
+  - SwiftyRSA/ObjC (1.7.0)
+
+DEPENDENCIES:
+  - SwiftyRSA
+
+SPEC REPOS:
+  trunk:
+    - SwiftyRSA
+
+SPEC CHECKSUMS:
+  SwiftyRSA: 8c6dd1ea7db1b8dc4fb517a202f88bb1354bc2c6
+
+PODFILE CHECKSUM: 7f153a9bb7d75d233418aa0b1212c15bd3b6af3f
+
+COCOAPODS: 1.11.2

@@ -6,12 +6,18 @@
 //
 
 import UIKit
+import SwiftUI
 
 class ChatsViewController : UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchControllerDelegate, UISearchBarDelegate {
     
     private let chatsData: Chats = Chats()
     private let chats = ChatsView()
-    let searchBar = UISearchBar()
+    lazy var searchBar = UISearchBar(frame: CGRect.zero)
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,18 +33,16 @@ class ChatsViewController : UIViewController, UITableViewDelegate, UITableViewDa
         chats.table.isScrollEnabled = true
         chats.table.delaysContentTouches = true
         chats.table.canCancelContentTouches = true
-        searchBar.backgroundColor = .black
-        searchBar.sizeToFit()
-        navigationItem.titleView = searchBar
+        chats.table.rowHeight = 90
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        searchBar.placeholder = "searchbartext"
         searchBar.delegate = self
+        searchBar.sizeToFit()
+        let barItem = UIBarButtonItem(customView: searchBar)
         
-        navigationController?.navigationBar.barTintColor = UIColor(red: 55/255, green: 120/255,
-                                                 blue: 250/255, alpha: 1)
-        navigationController?.navigationBar.barStyle = .black
-        navigationController?.navigationBar.tintColor = .white
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.isTranslucent = false
-        navigationItem.title = "Search Bar"
+        self.navigationItem.title = "dsfasd"
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
